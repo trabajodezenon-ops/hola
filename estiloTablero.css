@@ -1,0 +1,409 @@
+/* estiloTablero.css - Diseño Homologado */
+/* Fondo general */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(180deg, #0A1F3F 0%, #121212 100%);
+    background-attachment: fixed;
+    color: #E0E0E0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Textura sutil */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+/* Barra de navegación */
+#barraPrincipal {
+    background: linear-gradient(135deg, #1E3A5F 0%, #0A1F3F 100%);
+    border-bottom: 3px solid #C1121F;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#barraPrincipal img#logo {
+    height: 50px;
+    filter: brightness(0) invert(1);
+}
+
+/* Filtros en el nav */
+.nav-filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-filters .filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-filters label {
+    color: #E0E0E0;
+    font-size: 12px;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.nav-filters .form-control {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #E0E0E0;
+    border: 2px solid #C1121F;
+    border-radius: 6px;
+    padding: 8px 12px;
+    width: 160px;
+    transition: all 0.3s ease;
+}
+
+.nav-filters .form-control:focus {
+    border-color: #E0E0E0;
+    box-shadow: 0 0 8px rgba(193, 18, 31, 0.5);
+    background: linear-gradient(135deg, #2a2a2a 0%, #3d3d3d 100%);
+    color: #E0E0E0;
+    outline: none;
+}
+
+/* Icono calendario en blanco */
+.nav-filters input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.nav-filters input[type="date"]::-moz-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.btn-generar-nav {
+    background: linear-gradient(135deg, #C1121F 0%, #a50e18 100%);
+    color: #FFFFFF;
+    border: 2px solid #E0E0E0;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 18px;
+    white-space: nowrap;
+}
+
+.btn-generar-nav:hover {
+    background: linear-gradient(135deg, #a50e18 0%, #8a0c15 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(193, 18, 31, 0.4);
+}
+
+.btn-generar-nav:disabled {
+    background: linear-gradient(135deg, #666 0%, #888 100%);
+    border-color: #999;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Botón cerrar sesión */
+.btn-logout {
+    background: linear-gradient(135deg, #C1121F 0%, #a50e18 100%);
+    color: #FFFFFF;
+    border: 2px solid #E0E0E0;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+}
+
+.btn-logout:hover {
+    background: linear-gradient(135deg, #a50e18 0%, #8a0c15 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(193, 18, 31, 0.4);
+}
+
+.user-info {
+    color: #E0E0E0;
+    font-size: 14px;
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+/* Tarjetas de gráficas */
+.card {
+    background: linear-gradient(135deg, #1E3A5F 0%, #0A1F3F 100%);
+    border: 2px solid #C1121F;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    border-bottom: 2px solid #E0E0E0;
+    font-weight: bold;
+}
+
+/* Fondo blanco para el cuerpo de las gráficas */
+.card-body {
+    background-color: #FFFFFF !important;
+    border-radius: 0 0 8px 8px !important;
+}
+
+/* Alertas Bootstrap personalizadas */
+.alert-info {
+    background: linear-gradient(135deg, #1E3A5F 0%, #0A1F3F 100%);
+    border: 2px solid #C1121F;
+    color: #E0E0E0;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #2a0000 0%, #1a0000 100%);
+    border: 2px solid #8b0000;
+    color: #e0d3c1;
+}
+
+/* Highcharts personalización - Fondo blanco y texto negro */
+.highcharts-background {
+    fill: #FFFFFF !important;
+}
+
+.highcharts-title {
+    fill: #000000 !important;
+    font-weight: bold !important;
+}
+
+.highcharts-subtitle {
+    fill: #333333 !important;
+}
+
+.highcharts-axis-title {
+    fill: #000000 !important;
+}
+
+.highcharts-axis-labels {
+    fill: #000000 !important;
+}
+
+.highcharts-legend-item text {
+    fill: #000000 !important;
+}
+
+.highcharts-tooltip text {
+    fill: #000000 !important;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .nav-filters {
+        gap: 10px;
+    }
+    
+    .nav-filters .form-control {
+        width: 140px;
+    }
+}
+
+@media (max-width: 992px) {
+    #barraPrincipal {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-filters {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    .nav-filters .form-control {
+        width: 140px;
+    }
+    
+    .user-info {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-filters .filter-group {
+        align-items: center;
+    }
+    
+    .nav-filters .form-control {
+        width: 200px;
+    }
+    
+    .btn-generar-nav {
+        margin-top: 10px;
+    }
+}
+
+/* Ocultar el contenedor de filtros original */
+.filters-container {
+    display: none !important;
+}
+
+/* MEJORAS PARA EL DROPDOWN EN TABLERO2.PHP */
+
+/* Contenedor del dropdown mejorado */
+.dropdown-search-container {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+/* Input de búsqueda mejorado */
+.dropdown-search-container input {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+    color: #E0E0E0 !important;
+    border: 1px solid #C1121F !important;
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+    height: 35px !important;
+    width: 200px !important;
+    transition: all 0.3s ease !important;
+}
+
+.dropdown-search-container input:focus {
+    border-color: #E0E0E0 !important;
+    box-shadow: 0 0 8px rgba(193, 18, 31, 0.5) !important;
+    background: linear-gradient(135deg, #2a2a2a 0%, #3d3d3d 100%) !important;
+    color: #E0E0E0 !important;
+    outline: none !important;
+}
+
+/* Dropdown personalizado */
+.custom-dropdown-container {
+    scrollbar-width: thin;
+    scrollbar-color: #C1121F #2d2d2d;
+}
+
+.custom-dropdown-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-dropdown-container::-webkit-scrollbar-track {
+    background: #2d2d2d;
+    border-radius: 4px;
+}
+
+.custom-dropdown-container::-webkit-scrollbar-thumb {
+    background: #C1121F;
+    border-radius: 4px;
+}
+
+.custom-dropdown-container::-webkit-scrollbar-thumb:hover {
+    background: #a50e18;
+}
+
+/* Opciones del dropdown */
+.dropdown-option:hover {
+    background: linear-gradient(135deg, #2A4A7F 0%, #1A3A6F 100%) !important;
+    color: #FFFFFF !important;
+}
+
+/* Grupo de filtros mejorado para tablero2 */
+.nav-filters .filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.nav-filters label {
+    color: #E0E0E0;
+    font-size: 11px;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.nav-filters .form-select {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #E0E0E0;
+    border: 1px solid #C1121F;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    height: 35px;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.nav-filters .form-select:focus {
+    border-color: #E0E0E0;
+    box-shadow: 0 0 8px rgba(193, 18, 31, 0.5);
+    background: linear-gradient(135deg, #2a2a2a 0%, #3d3d3d 100%);
+    color: #E0E0E0;
+    outline: none;
+}
+
+/* Responsive mejorado */
+@media (max-width: 1200px) {
+    .nav-filters .filter-group {
+        min-width: 180px;
+    }
+    
+    .nav-filters .form-select {
+        min-width: 180px;
+    }
+    
+    .dropdown-search-container input {
+        width: 180px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-filters {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    .nav-filters .filter-group {
+        min-width: 160px;
+    }
+    
+    .nav-filters .form-select {
+        min-width: 160px;
+    }
+    
+    .dropdown-search-container input {
+        width: 160px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-filters {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .nav-filters .filter-group {
+        align-items: center;
+        min-width: 200px;
+    }
+    
+    .nav-filters .form-select {
+        min-width: 200px;
+    }
+    
+    .dropdown-search-container input {
+        width: 200px !important;
+    }
+}
